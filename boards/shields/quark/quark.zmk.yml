@@ -1,0 +1,13 @@
+---
+file_format: "1"
+id: quark
+name: "Quark"
+type: shield
+url: "https://github.com/your-username/your-repo-name" # Change this to your repo URL
+requires: [nice_nano] # Or pro_micro, seeed_xiao_ble, etc.
+features:
+  - keys
+studio: true # This flag enables ZMK Studio integration
+siblings:
+  - quark_left
+  - quark_right

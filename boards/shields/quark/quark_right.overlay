@@ -1,0 +1,18 @@
+// In boards/shields/quark/quark_right.overlay
+
+#include "quark.dtsi"
+
+&kscan0 {
+    // This offset is CRITICAL. It tells the right half to start its
+    // key positions after the left half's 6 columns.
+    col-offset = <6>;
+
+    col-gpios
+        = <&pro_micro 14 GPIO_ACTIVE_HIGH> // COL 0
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH> // COL 1
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH> // COL 2
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH> // COL 3
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH> // COL 4
+        , <&pro_micro 21 GPIO_ACTIVE_HIGH> // COL 5
+        ;
+};

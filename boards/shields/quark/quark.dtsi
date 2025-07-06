@@ -1,0 +1,91 @@
+// In boards/shields/quark/quark.dtsi
+
+#include <physical_layouts.dtsi>
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    // This kscan node defines your rows. It is shared by both halves.
+    // Remember to replace the placeholder pins with your actual row GPIOs.
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+
+        row-gpios
+            = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // num row
+            , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // top row
+            , <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // home row
+            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // bottom row
+            ;
+    };
+
+    // This physical_layout is generated based on your Ergogen config.
+    // It contains the precise physical location of every key for ZMK Studio.
+    quark_physical_layout: quark_physical_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Quark";
+        kscan = <&kscan0>;
+        keys //                         w     h      x       y        r      rx     ry
+            // Left Hand - Matrix (Keys 0-23)
+            = <&key_physical_attrs     100   100     0       0        0       0      0>
+            , <&key_physical_attrs     100   100     1900    0        0       0      0>
+            , <&key_physical_attrs     100   100     3800    850      0       0      0>
+            , <&key_physical_attrs     100   100     5700    800      0       0      0>
+            , <&key_physical_attrs     100   100     7600    (-650)   0       0      0>
+            , <&key_physical_attrs     100   100     9500    (-200)   0       0      0>
+            , <&key_physical_attrs     100   100     0       1900     0       0      0>
+            , <&key_physical_attrs     100   100     1900    1900     0       0      0>
+            , <&key_physical_attrs     100   100     3800    2750     0       0      0>
+            , <&key_physical_attrs     100   100     5700    2700     0       0      0>
+            , <&key_physical_attrs     100   100     7600    1250     0       0      0>
+            , <&key_physical_attrs     100   100     9500    1700     0       0      0>
+            , <&key_physical_attrs     100   100     0       3800     0       0      0>
+            , <&key_physical_attrs     100   100     1900    3800     0       0      0>
+            , <&key_physical_attrs     100   100     3800    4650     0       0      0>
+            , <&key_physical_attrs     100   100     5700    4600     0       0      0>
+            , <&key_physical_attrs     100   100     7600    3150     0       0      0>
+            , <&key_physical_attrs     100   100     9500    3600     0       0      0>
+            , <&key_physical_attrs     100   100     0       5700     0       0      0>
+            , <&key_physical_attrs     100   100     1900    5700     0       0      0>
+            , <&key_physical_attrs     100   100     3800    6550     0       0      0>
+            , <&key_physical_attrs     100   100     5700    6500     0       0      0>
+            , <&key_physical_attrs     100   100     7600    5050     0       0      0>
+            , <&key_physical_attrs     100   100     9500    5500     0       0      0>
+            // Left Hand - Thumbs (Keys 24-25)
+            , <&key_physical_attrs     100   100     10000   3400     (-2000) 50     50>
+            , <&key_physical_attrs     100   100     9050    5300     (-9000) 50     50>
+            // Right Hand - Matrix (Keys 26-49)
+            , <&key_physical_attrs     100   100     19000   0        0       0      0>
+            , <&key_physical_attrs     100   100     17100   0        0       0      0>
+            , <&key_physical_attrs     100   100     15200   850      0       0      0>
+            , <&key_physical_attrs     100   100     13300   800      0       0      0>
+            , <&key_physical_attrs     100   100     11400   (-650)   0       0      0>
+            , <&key_physical_attrs     100   100     9500    (-200)   0       0      0>
+            , <&key_physical_attrs     100   100     19000   1900     0       0      0>
+            , <&key_physical_attrs     100   100     17100   1900     0       0      0>
+            , <&key_physical_attrs     100   100     15200   2750     0       0      0>
+            , <&key_physical_attrs     100   100     13300   2700     0       0      0>
+            , <&key_physical_attrs     100   100     11400   1250     0       0      0>
+            , <&key_physical_attrs     100   100     9500    1700     0       0      0>
+            , <&key_physical_attrs     100   100     19000   3800     0       0      0>
+            , <&key_physical_attrs     100   100     17100   3800     0       0      0>
+            , <&key_physical_attrs     100   100     15200   4650     0       0      0>
+            , <&key_physical_attrs     100   100     13300   4600     0       0      0>
+            , <&key_physical_attrs     100   100     11400   3150     0       0      0>
+            , <&key_physical_attrs     100   100     9500    3600     0       0      0>
+            , <&key_physical_attrs     100   100     19000   5700     0       0      0>
+            , <&key_physical_attrs     100   100     17100   5700     0       0      0>
+            , <&key_physical_attrs     100   100     15200   6550     0       0      0>
+            , <&key_physical_attrs     100   100     13300   6500     0       0      0>
+            , <&key_physical_attrs     100   100     11400   5050     0       0      0>
+            , <&key_physical_attrs     100   100     9500    5500     0       0      0>
+            // Right Hand - Thumbs (Keys 50-51)
+            , <&key_physical_attrs     100   100     9000    3400     2000    50     50>
+            , <&key_physical_attrs     100   100     9950    5300     9000    50     50>
+            ;
+    };
+
+    chosen {
+        zmk,physical-layout = <&quark_physical_layout>;
+    };
+};

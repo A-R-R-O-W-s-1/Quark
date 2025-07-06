@@ -1,0 +1,11 @@
+---
+include:
+  # This builds the left (central) half with ZMK Studio enabled
+  - board: nice_nano_v2 # IMPORTANT: Change this to your actual controller board
+    shield: quark_left
+    snippet: studio-rpc-usb-uart  # Adds the code for Studio communication
+    cmake-args: -DCONFIG_ZMK_STUDIO=y # Enables the Studio feature
+
+  # This builds the right (peripheral) half
+  - board: nice_nano_v2 # IMPORTANT: Change this to your actual controller board
+    shield: quark_right

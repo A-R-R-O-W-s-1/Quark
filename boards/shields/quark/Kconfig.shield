@@ -1,0 +1,5 @@
+config SHIELD_QUARK_LEFT
+    def_bool $(shields_list_contains,quark_left)
+
+config SHIELD_QUARK_RIGHT
+    def_bool $(shields_list_contains,quark_right)

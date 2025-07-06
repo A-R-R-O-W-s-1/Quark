@@ -1,0 +1,17 @@
+if SHIELD_QUARK_LEFT
+
+# This name will appear over USB and Bluetooth
+config ZMK_KEYBOARD_NAME
+    default "Quark"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_QUARK_LEFT || SHIELD_QUARK_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
