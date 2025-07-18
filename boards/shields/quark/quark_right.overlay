@@ -3,8 +3,6 @@
 #include "quark.dtsi"
 
 &kscan0 {
-    // This offset is CRITICAL. It tells the right half to start its
-    // key positions after the left half's 6 columns.
     col-offset = <6>;
 
     col-gpios
