@@ -3,8 +3,6 @@
 #include "quark.dtsi"
 
 &kscan0 {
-    col-offset = <6>;
-
     col-gpios
         = <&pro_micro 14 GPIO_ACTIVE_HIGH> // COL 0
         , <&pro_micro 15 GPIO_ACTIVE_HIGH> // COL 1
@@ -13,4 +11,8 @@
         , <&pro_micro 20 GPIO_ACTIVE_HIGH> // COL 4
         , <&pro_micro 21 GPIO_ACTIVE_HIGH> // COL 5
         ;
+};
+
+&default_transform {
+    col-offset = <6>;
 };
