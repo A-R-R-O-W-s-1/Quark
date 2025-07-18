@@ -17,10 +17,13 @@
             ;
     };
 
+
+
     quark_physical_layout: quark_physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "Quark";
         kscan = <&kscan0>;
+        transform = <&default_transform>;
         keys //                         w     h      x       y        r      rx     ry
             // Left Hand - Matrix (Keys 0-23)
             = <&key_physical_attrs     100   100     0       0        0       0      0>
@@ -82,6 +85,7 @@
     };
 
     chosen {
+        zmk,kscan = <&kscan0>;
         zmk,physical-layout = <&quark_physical_layout>;
     };
 };
