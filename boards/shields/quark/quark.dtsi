@@ -4,8 +4,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-    // This kscan node defines your rows. It is shared by both halves.
-    // Remember to replace the placeholder pins with your actual row GPIOs.
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
@@ -19,8 +17,6 @@
             ;
     };
 
-    // This physical_layout is generated based on your Ergogen config.
-    // It contains the precise physical location of every key for ZMK Studio.
     quark_physical_layout: quark_physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "Quark";
