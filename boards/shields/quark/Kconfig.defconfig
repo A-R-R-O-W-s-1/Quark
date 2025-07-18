@@ -1,6 +1,5 @@
 if SHIELD_QUARK_LEFT
 
-# This name will appear over USB and Bluetooth
 config ZMK_KEYBOARD_NAME
     default "Quark"
 
